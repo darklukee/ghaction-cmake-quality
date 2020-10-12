@@ -1,8 +1,9 @@
 ---
 name: CI
-on: 
+on:
   push:
   create:
+  pull_request:
 jobs:
   build-docker:
     name: "Build and Publish rainlabs/cmake-quality-action"
@@ -45,7 +46,7 @@ jobs:
       - uses: actions/checkout@main
         with:
           repository: google/googletest
-          path: googletest 
+          path: googletest
       - uses: ./action/
         with:
           dependencies: clang-8 clang-9
